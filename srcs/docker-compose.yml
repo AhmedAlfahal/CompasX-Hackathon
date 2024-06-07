@@ -1,0 +1,70 @@
+version: '3'
+services:
+  mariadb:
+    build: ./database/
+    image: mariadb
+    container_name: mariadb
+    volumes:
+      - db-data:/var/lib/mysql
+    restart:
+      on-failure 
+    networks:
+      - wpsite
+    env_file:
+      - .env
+  blockchain:
+    container_name: blockchain
+    build: ./blockchain/
+    image: blockchain
+    networks:
+      - wpsite
+    volumes:
+      - ./blockchain:/app
+    ports:
+      - "8545:8545"
+    restart: always
+  frontend:
+    container_name: frontend
+    build: ./frontend/
+    image: frontend
+    depends_on:
+      - mariadb
+      - blockchain
+    volumes:
+      - ./frontend:/app
+    networks:
+      - wpsite
+    ports:
+      - "3000:3000"
+    restart: always
+    env_file:
+      - .env
+    init: true
+  backend:
+    container_name: backend
+    build: ./backend/
+    image: backend
+    depends_on:
+      - mariadb
+      - blockchain
+    volumes:
+      - ./backend:/app
+    networks:
+      - wpsite
+    ports:
+      - "5000:5000"
+    restart: always
+    env_file:
+      - .env
+
+
+networks:
+  wpsite:
+    driver: bridge
+
+volumes:
+  db-data:
+    driver_opts:
+      type: none
+      device: ./data/db-data
+      o: bind
