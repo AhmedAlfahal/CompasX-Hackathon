@@ -1,3 +1,4 @@
+// CompetitionBar.jsx
 import React, { useEffect, useState } from 'react';
 import './CompetitionBar.css'; // Import the CSS file for styling
 
