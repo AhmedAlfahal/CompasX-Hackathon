@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function Livestream() {
   const [stream, setStream] = useState(null);
-  const videoId = 'zD15w2465p4'; // Your specific video ID
+  const videoId = 'lyn1d6WIFUQ'; // Your specific video ID
 
   useEffect(() => {
     const fetchStream = async () => {
@@ -33,7 +33,7 @@ function Livestream() {
       {stream ? (
         <div>
           <h2>{stream.snippet.title}</h2>
-          <p>{stream.snippet.description}</p>
+          {/* <p>{stream.snippet.description}</p> */}
           <iframe
             width="560"
             height="315"
