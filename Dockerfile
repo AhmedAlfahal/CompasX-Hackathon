@@ -10,6 +10,7 @@ COPY package*.json ./
 # Clean npm cache and install dependencies
 RUN npm install
 RUN npm install styled-components
+RUN npm install react-router-dom@6
 
 # Copy the rest of the application code
 COPY . .

@@ -1,11 +1,18 @@
 import React from 'react';
-import './Header.css'; // Import the CSS for styling
+import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import './Header.css';
 
 const Header = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleProfileClick = () => {
+    navigate('/profile'); // Navigate to profile page
+  };
+
   return (
     <div className="header">
       <div className="header-left">
-        <img src="../assets/logo.png" alt="Logo" className="logo" />
+        <img src="path/to/logo.png" alt="Logo" className="logo" />
         <h1>COMPASS</h1>
         <h2>ROAD TO 2024</h2>
       </div>
@@ -13,7 +20,7 @@ const Header = () => {
         <div className="profile-dropdown">
           <button className="profile-button">Profile</button>
           <div className="dropdown-content">
-            <a href="#">Profile</a>
+            <a onClick={handleProfileClick}>Profile</a>
             <a href="#">Settings</a>
             <a href="#">Logout</a>
           </div>

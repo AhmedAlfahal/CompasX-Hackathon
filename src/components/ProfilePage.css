@@ -1,0 +1,92 @@
+.profile-page {
+  padding: 20px;
+  color: white;
+  background-color: #242424;
+  text-align: center;
+}
+
+.profile-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.stat-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.stat-card p {
+  margin: 0;
+  font-size: 18px;
+}
+
+.stat-card h3 {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+}
+
+.nft-section {
+  margin-top: 40px;
+}
+
+.nft {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.nft img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.mint-button, .confirm-button, .cancel-button {
+  background-color: #00BCD4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.mint-button:hover, .confirm-button:hover, .cancel-button:hover {
+  background-color: #0097a7;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1a1a1a;
+  padding: 40px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.success-popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #00BCD4;
+  font-size: 18px;
+}

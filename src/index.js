@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css'; // Import the global styles
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import Main from './Main';
+import './index.css';
+import Modal from 'react-modal';
+
+// Bind modal to app element
+Modal.setAppElement('#root');
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
-
-reportWebVitals();
