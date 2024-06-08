@@ -52,7 +52,8 @@
 Decentralized Voting platform leveraging blockchain technology to ensure secure, transparent, and tamper-proof game streaming competitions. Designed to uphold the integrity of the competition process, VoteChain provides an easy-to-use interface that guarantees the privacy and accuracy of every vote. Voters cast their votes for their favorite players, and if the player they voted for wins, they receive special prizes (NFTs) secured on the blockchain.
 
 
-![1](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/138756079/1ecf6ea7-247a-41ed-b34b-74dde2a430bc)
+![image](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/34e24690-e5e7-4eea-acba-06f449ec1808)
+
 
 
 ## Introduction
