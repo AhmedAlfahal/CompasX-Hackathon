@@ -21,15 +21,16 @@ const App = () => {
   const [modalData, setModalData] = useState('');
   const [user, setUser] = useState({
     name: 'John Doe',
+    walletAddress: '0x1234567890abcdef1234567890abcdef12345678',
     totalVotes: 10,
     successVotes: 7,
     failures: 3,
     winningStreak: 5,
-    nft: {
-      image: 'path/to/nft.png',
-      name: 'Champion NFT'
-    }
-  });
+    nfts: [
+      { image: 'path/to/nft1.png', name: 'NFT 1' },
+      { image: 'path/to/nft2.png', name: 'NFT 2' }
+    ]
+  });  
   const [team, setTeam] = useState(null);
 
   const handleVoteClick = (team) => {
