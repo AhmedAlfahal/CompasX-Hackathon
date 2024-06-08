@@ -1,6 +1,9 @@
 <h2 align="center">
    Decentralized Voting System
-         (YALLA Vote)
+         
+</h2>
+   <h2
+      (YALLA Vote)
 </h2>
 
 <p align="center">🎮Empowering Every Voice with Blockchain Trust🎮</p>
