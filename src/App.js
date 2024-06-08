@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Livestream from './Livestream';
+import BackgroundComponent from './components/BackgroundComponent'
 import CompetitionBar from './components/CompetitionBar';
 import VotingButton from './components/VotingButton';
 import PredictorModal from './components/PredictorModal';
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div className="App">
+      <BackgroundComponent/>
       <Header />
       <div className="content">
         <div className="video-stream">
