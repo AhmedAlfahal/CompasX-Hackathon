@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
-import { ethers } from 'ethers';
 
+import { ethers } from 'ethers';
+import Modal from 'react-modal';
 import { motion } from 'framer-motion';
 import './ProfilePage.css';
+import nft1 from '../assets/0.jpg';
+
 import Yalla from "../YallaVote.json"
 const YallaVote = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
-
-
-async function mint(address){
-	if (!address) return;
+async function mint(){
 	try {
 		if (typeof window.ethereum !== "undefined"){
 			const provider = new ethers.BrowserProvider(window.ethereum);
@@ -27,8 +26,7 @@ async function mint(address){
 	  }
 }
 
-const ProfilePage = ({ user, account }) => {
-
+const ProfilePage = ({ user }) => {
   const [nftMinted, setNftMinted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMintSuccess, setIsMintSuccess] = useState(false);
@@ -42,7 +40,7 @@ const ProfilePage = ({ user, account }) => {
   };
 
   const handleMintNft = () => {
-    mint(account)
+    mint()
     setIsModalOpen(false);
     setIsMintSuccess(true);
     setNftMinted(true);
@@ -50,38 +48,46 @@ const ProfilePage = ({ user, account }) => {
 
   return (
     <div className="profile-page">
-      <h1>{user.name}'s Profile</h1>
-      <div className="profile-stats">
-        <div className="stat-card">
-          <p>Total Votes</p>
-          <h3>{user.totalVotes}</h3>
-        </div>
-        <div className="stat-card">
-          <p>Success Votes</p>
-          <h3>{user.successVotes}</h3>
-        </div>
-        <div className="stat-card">
-          <p>Failures</p>
-          <h3>{user.failures}</h3>
-        </div>
-        <div className="stat-card">
-          <p>Winning Streak</p>
-          <h3>{user.winningStreak}</h3>
-        </div>
+      <div className="profile-header">
+        <h1>{user.name}'s Profile</h1>
+        <p>Wallet Address: {user.walletAddress}</p>
       </div>
-      <div className="nft-section">
-        <h2>Your NFTs</h2>
-        {user.nft && (
-          <div className="nft">
-            <img src={user.nft.image} alt="NFT" />
-            <p>{user.nft.name}</p>
-            {!nftMinted ? (
-              <button onClick={openModal} className="mint-button">Mint NFT</button>
-            ) : (
-              <p>NFT Minted!</p>
-            )}
+      <div className="profile-content">
+        <div className="nft-collection">
+          <h2>Your NFTs</h2>
+          <div className="nft-grid">
+            {user.nfts.map((nft, index) => (
+              <div className="nft-card" key={index}>
+                <img src={nft1} alt={nft.name} />
+                <p>{nft.name}</p>
+                {!nftMinted && (
+                  <button onClick={openModal} className="mint-button">Mint NFT</button>
+                )}
+                {nftMinted && (
+                  <p>NFT Minted!</p>
+                )}
+              </div>
+            ))}
           </div>
-        )}
+        </div>
+        <div className="profile-stats">
+          <div className="stat-card">
+            <p>Total Votes</p>
+            <h3>{user.totalVotes}</h3>
+          </div>
+          <div className="stat-card">
+            <p>Success Votes</p>
+            <h3>{user.successVotes}</h3>
+          </div>
+          <div className="stat-card">
+            <p>Failures</p>
+            <h3>{user.failures}</h3>
+          </div>
+          <div className="stat-card">
+            <p>Winning Streak</p>
+            <h3>{user.winningStreak}</h3>
+          </div>
+        </div>
       </div>
       <Modal
         isOpen={isModalOpen}

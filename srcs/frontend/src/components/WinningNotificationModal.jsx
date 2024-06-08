@@ -1,14 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { motion } from 'framer-motion';
-import './PredictorModal.css';
+import './WinningNotificationModal.css';
 
-const PredictorModal = ({ isOpen, onRequestClose, data }) => {
+const WinningNotificationModal = ({ isOpen, onRequestClose }) => {
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      contentLabel="Predictor Modal"
+      contentLabel="Winning Notification"
       className="modal"
       overlayClassName="overlay"
     >
@@ -18,12 +18,12 @@ const PredictorModal = ({ isOpen, onRequestClose, data }) => {
         exit={{ y: 100, opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2>Prediction Results</h2>
-        <p>{data}</p>
-        <button onClick={onRequestClose} className="cancel-button">Close</button>
+        <h2>Congratulations!</h2>
+        <p>Your team won. You can get the NFT from your profile page.</p>
+        <button onClick={onRequestClose} className="confirm-button">Go to Profile</button>
       </motion.div>
     </Modal>
   );
 };
 
-export default PredictorModal;
+export default WinningNotificationModal;

@@ -5,7 +5,74 @@
   text-align: center;
 }
 
+.profile-header {
+  margin-bottom: 20px;
+}
+
+.profile-header h1 {
+  color: #E91E63; /* Use pink color for headers */
+}
+
+.profile-header p {
+  color: #00BCD4; /* Use cyan color for wallet address */
+}
+
+.profile-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nft-collection {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.nft-collection h2 {
+  color: #E91E63; /* Use pink color for headers */
+}
+
+.nft-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.nft-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nft-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.nft-card p {
+  color: #E91E63; /* Use pink color for NFT names */
+}
+
+.mint-button, .confirm-button, .cancel-button {
+  background-color: #00BCD4;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.mint-button:hover, .confirm-button:hover, .cancel-button:hover {
+  background-color: #0097a7;
+}
+
 .profile-stats {
+  flex: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -25,40 +92,13 @@
 .stat-card p {
   margin: 0;
   font-size: 18px;
+  color: #E91E63; /* Use pink color for stat titles */
 }
 
 .stat-card h3 {
   margin: 10px 0 0 0;
   font-size: 24px;
-}
-
-.nft-section {
-  margin-top: 40px;
-}
-
-.nft {
-  display: inline-block;
-  margin-top: 20px;
-}
-
-.nft img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-}
-
-.mint-button, .confirm-button, .cancel-button {
-  background-color: #00BCD4;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 10px;
-}
-
-.mint-button:hover, .confirm-button:hover, .cancel-button:hover {
-  background-color: #0097a7;
+  color: #00BCD4; /* Use cyan color for stat values */
 }
 
 .modal {
@@ -77,6 +117,18 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.modal h2, .modal p {
+  color: #E91E63; /* Update text color */
+}
+
+.cancel-button {
+  background-color: #E91E63; /* Update cancel button background color */
+}
+
+.cancel-button:hover {
+  background-color: #c2185b;
+}
+
 .success-popup {
   position: fixed;
   top: 20px;
@@ -87,6 +139,6 @@
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #00BCD4;
+  color: #00BCD4; /* Use cyan color for success text */
   font-size: 18px;
 }
