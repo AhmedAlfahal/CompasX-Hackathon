@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import './Header.css';
+import logo from '../assets/logo.png';
 
 const Header = () => {
   const navigate = useNavigate(); // Initialize useNavigate
@@ -12,9 +13,9 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-left">
-        <img src="path/to/logo.png" alt="Logo" className="logo" />
-        <h1>COMPASS</h1>
-        <h2>ROAD TO 2024</h2>
+        <img src={logo} alt="Logo" className="logo" />
+        <h1>Yalla</h1>
+        <h2>Vote</h2>
       </div>
       <div className="header-right">
         <div className="profile-dropdown">
