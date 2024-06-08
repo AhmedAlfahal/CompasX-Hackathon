@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { motion } from 'framer-motion';
 import './ProfilePage.css';
+import nft1 from '../assets/0.jpg';
 
 const ProfilePage = ({ user }) => {
   const [nftMinted, setNftMinted] = useState(false);
@@ -35,7 +36,7 @@ const ProfilePage = ({ user }) => {
           <div className="nft-grid">
             {user.nfts.map((nft, index) => (
               <div className="nft-card" key={index}>
-                <img src={nft.image} alt={nft.name} />
+                <img src={nft1} alt={nft.name} />
                 <p>{nft.name}</p>
                 {!nftMinted && (
                   <button onClick={openModal} className="mint-button">Mint NFT</button>

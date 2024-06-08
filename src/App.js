@@ -9,6 +9,8 @@ import ProfilePage from './components/ProfilePage';
 import VoteConfirmationModal from './components/VoteConfirmationModal';
 import WinningNotificationModal from './components/WinningNotificationModal';
 import './App.css';
+// import nft1 from 'assets/0.jpg';
+// import nft2 from 'assets/desktop.png';
 
 const App = () => {
   const navigate = useNavigate();
@@ -27,8 +29,8 @@ const App = () => {
     failures: 3,
     winningStreak: 5,
     nfts: [
-      { image: 'path/to/nft1.png', name: 'NFT 1' },
-      { image: 'path/to/nft2.png', name: 'NFT 2' }
+      { image: 'assets/0.jpg', name: 'NFT 1' },
+      { image: 'assets/desktop.png', name: 'NFT 2' }
     ]
   });  
   const [team, setTeam] = useState(null);
