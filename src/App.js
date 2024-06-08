@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Livestream from './Livestream';
 import CompetitionBar from './components/CompetitionBar';
@@ -9,8 +9,6 @@ import ProfilePage from './components/ProfilePage';
 import VoteConfirmationModal from './components/VoteConfirmationModal';
 import WinningNotificationModal from './components/WinningNotificationModal';
 import './App.css';
-// import nft1 from 'assets/0.jpg';
-// import nft2 from 'assets/desktop.png';
 
 const App = () => {
   const navigate = useNavigate();
@@ -29,11 +27,18 @@ const App = () => {
     failures: 3,
     winningStreak: 5,
     nfts: [
-      { image: 'assets/0.jpg', name: 'NFT 1' },
-      { image: 'assets/desktop.png', name: 'NFT 2' }
+      { image: 'path/to/nft1.png', name: 'NFT 1' },
+      { image: 'path/to/nft2.png', name: 'NFT 2' }
     ]
-  });  
+  });
   const [team, setTeam] = useState(null);
+  const modalRef = useRef(null);
+
+  useEffect(() => {
+    if (modalIsOpen && modalRef.current) {
+      modalRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [modalIsOpen]);
 
   const handleVoteClick = (team) => {
     setTeam(team);
@@ -57,6 +62,7 @@ const App = () => {
       user.successVotes += 1;
       user.totalVotes += 1;
       user.winningStreak += 1;
+      user.nfts.push({ image: 'path/to/new-nft.png', name: 'New NFT' });
       setUser({ ...user });
     }, 3000);
   };
@@ -73,49 +79,53 @@ const App = () => {
   return (
     <div className="App">
       <Header />
+      <h2>Live Stream</h2>
       <Routes>
         <Route path="/profile" element={<ProfilePage user={user} />} />
         <Route path="/" element={
           <>
             <div className="content">
-              <div className="video-stream">
-                <Livestream />
-              </div>
-              <div className="chat-box">
-                <h2>Chat</h2>
-                <div className="chat-messages">
-                  {/* Mock chat messages */}
-                  <p>User1: Hello!</p>
-                  <p>User2: Hi there!</p>
-                  {/* Add more chat messages here */}
+              <div className="video-chat-container">
+                <div className="video-container">
+                  <Livestream />
                 </div>
-                <div className="chat-input-container">
-                  <input type="text" placeholder="Type your message..." className="chat-input" />
-                  <button className="send-button">Send</button>
+                <div className="chat-container">
+                  <h2>Chat</h2>
+                  <div className="chat-messages">
+                    {/* Mock chat messages */}
+                    <p>User1: Hello!</p>
+                    <p>User2: Hi there!</p>
+                    {/* Add more chat messages here */}
+                  </div>
+                  <div className="chat-input-container">
+                    <input type="text" placeholder="Type your message..." className="chat-input" />
+                    <button className="send-button">Send</button>
+                  </div>
                 </div>
               </div>
+              <div className="competition-bar-container">
+                <h2 className="competition-bar-label">Result Prediction</h2>
+                <CompetitionBar player1Score={votesTeamA} player2Score={votesTeamB} />
+                <div className="voting-buttons-container">
+                  <VotingButton color="#E91E63" onClick={() => handleVoteClick('A')} disabled={voted}>
+                    Team A
+                  </VotingButton>
+                  <VotingButton color="#00BCD4" onClick={() => handleVoteClick('B')} disabled={voted}>
+                    Team B
+                  </VotingButton>
+                </div>
+              </div>
+              <PredictorModal ref={modalRef} isOpen={modalIsOpen} onRequestClose={closeModal} data={modalData} />
+              <VoteConfirmationModal
+                isOpen={confirmationModalIsOpen}
+                onRequestClose={() => setConfirmationModalIsOpen(false)}
+                onConfirm={handleConfirmVote}
+              />
+              <WinningNotificationModal
+                isOpen={winningNotificationIsOpen}
+                onRequestClose={closeWinningNotification}
+              />
             </div>
-            <div className="competition-bar-container">
-              <CompetitionBar player1Score={votesTeamA} player2Score={votesTeamB} />
-            </div>
-            <div className="voting-buttons-container">
-              <VotingButton color="#E91E63" onClick={() => handleVoteClick('A')} disabled={voted}>
-                Team A
-              </VotingButton>
-              <VotingButton color="#00BCD4" onClick={() => handleVoteClick('B')} disabled={voted}>
-                Team B
-              </VotingButton>
-            </div>
-            <PredictorModal isOpen={modalIsOpen} onRequestClose={closeModal} data={modalData} />
-            <VoteConfirmationModal
-              isOpen={confirmationModalIsOpen}
-              onRequestClose={() => setConfirmationModalIsOpen(false)}
-              onConfirm={handleConfirmVote}
-            />
-            <WinningNotificationModal
-              isOpen={winningNotificationIsOpen}
-              onRequestClose={closeWinningNotification}
-            />
           </>
         } />
       </Routes>
