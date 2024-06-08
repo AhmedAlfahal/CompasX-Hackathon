@@ -8,9 +8,6 @@ WORKDIR /app
 COPY package*.json ./
 
 # Clean npm cache and install dependencies
-RUN npm install
-RUN npm install styled-components
-RUN npm install react-router-dom@6
 
 # Copy the rest of the application code
 COPY . .
@@ -18,8 +15,6 @@ COPY . .
 # Expose port 80
 EXPOSE 3000
 
-# Start the Nginx server
-CMD ["npm", "start"]
+RUN chmod +x entrypoint.sh
 
-# docker build -t app .
-# docker run -p 3000:3000 app
+CMD ["./entrypoint.sh"]
