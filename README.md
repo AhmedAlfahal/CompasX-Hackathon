@@ -86,8 +86,11 @@ The system integrates multiple components to ensure a seamless and secure voting
 
 ### Voting Process
 <h1 align="center">
+   
 ![4](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/b177b47b-d992-482f-a014-41f1f2d96949)
+   
 </h1>
+
 1. **Registration and Authentication**:
    - Secure registration and verification of voters.
    - Encrypted log-in to protect voter identity and access.
