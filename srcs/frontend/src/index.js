@@ -1,12 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
+import Main from './Main';
 import './index.css';
-import App from './App';
+import Modal from 'react-modal';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+// Bind modal to app element
+Modal.setAppElement('#root');
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Main />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
-
