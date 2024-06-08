@@ -141,6 +141,13 @@ Technologies that We used to develop Voting System:
 
 ## 💻 Getting started
 
+<h1 align="center">
+   
+![3](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/40713ad6-4e86-4031-9749-5519ba734588)
+
+   
+</h1>
+
 ### Prerequisites
 
 - **Node.js** and **npm**: Ensure you have Node.js and npm installed.
