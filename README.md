@@ -1,8 +1,7 @@
 <h2 align="center">
-   Decentralized Voting System
-         
+   Decentralized Voting System      
 </h2>
-   <h2
+   <h2 align="center">
       (YALLA Vote)
 </h2>
 
