@@ -1,4 +1,4 @@
-/* App.css */
+/* Existing styles */
 .App {
   text-align: center;
   color: white;
@@ -42,8 +42,13 @@
   border-radius: 5px;
 }
 
+.chat-input-container {
+  display: flex;
+  align-items: center;
+}
+
 .chat-input {
-  width: calc(100% - 90px);
+  flex: 1;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid #444;

@@ -22,4 +22,4 @@ EXPOSE 3000
 CMD ["npm", "start"]
 
 # docker build -t app .
-# docker run -p 3000:3000 app
+# docker run -p 3000:3000 app   

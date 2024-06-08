@@ -14,7 +14,7 @@
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.confirm-button {
+.confirm-button, .cancel-button {
   background-color: #00BCD4;
   border: none;
   color: white;
@@ -24,7 +24,7 @@
   margin: 10px;
 }
 
-.confirm-button:hover {
+.confirm-button:hover, .cancel-button:hover {
   background-color: #0097a7;
 }
 

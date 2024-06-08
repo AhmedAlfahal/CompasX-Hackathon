@@ -6,6 +6,8 @@ import VotingButton from './components/VotingButton';
 import PredictorModal from './components/PredictorModal';
 import Header from './components/Header';
 import ProfilePage from './components/ProfilePage';
+import VoteConfirmationModal from './components/VoteConfirmationModal';
+import WinningNotificationModal from './components/WinningNotificationModal';
 import './App.css';
 
 const App = () => {
@@ -14,6 +16,8 @@ const App = () => {
   const [votesTeamB, setVotesTeamB] = useState(0);
   const [voted, setVoted] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [confirmationModalIsOpen, setConfirmationModalIsOpen] = useState(false);
+  const [winningNotificationIsOpen, setWinningNotificationIsOpen] = useState(false);
   const [modalData, setModalData] = useState('');
   const [user, setUser] = useState({
     name: 'John Doe',
@@ -26,29 +30,41 @@ const App = () => {
       name: 'Champion NFT'
     }
   });
+  const [team, setTeam] = useState(null);
 
-  const handleVote = (team) => {
+  const handleVoteClick = (team) => {
+    setTeam(team);
+    setConfirmationModalIsOpen(true);
+  };
+
+  const handleConfirmVote = () => {
+    setConfirmationModalIsOpen(false);
+    setModalData(`Prediction for Team ${team}`);
+    setModalIsOpen(true);
+
     if (team === 'A') {
       setVotesTeamA(votesTeamA + 1);
     } else if (team === 'B') {
       setVotesTeamB(votesTeamB + 1);
     }
     setVoted(true);
-    setModalData(`Prediction for Team ${team}`);
-    setModalIsOpen(true);
 
-    // Simulate team win condition
-    if (team === 'A') {
+    setTimeout(() => {
+      setWinningNotificationIsOpen(true);
       user.successVotes += 1;
       user.totalVotes += 1;
       user.winningStreak += 1;
       setUser({ ...user });
-      navigate('/profile'); // Redirect to profile page if user wins
-    }
+    }, 3000);
   };
 
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+
+  const closeWinningNotification = () => {
+    setWinningNotificationIsOpen(false);
+    navigate('/profile');
   };
 
   return (
@@ -80,14 +96,23 @@ const App = () => {
               <CompetitionBar player1Score={votesTeamA} player2Score={votesTeamB} />
             </div>
             <div className="voting-buttons-container">
-              <VotingButton color="#E91E63" onClick={() => handleVote('A')} disabled={voted}>
+              <VotingButton color="#E91E63" onClick={() => handleVoteClick('A')} disabled={voted}>
                 Team A
               </VotingButton>
-              <VotingButton color="#00BCD4" onClick={() => handleVote('B')} disabled={voted}>
+              <VotingButton color="#00BCD4" onClick={() => handleVoteClick('B')} disabled={voted}>
                 Team B
               </VotingButton>
             </div>
             <PredictorModal isOpen={modalIsOpen} onRequestClose={closeModal} data={modalData} />
+            <VoteConfirmationModal
+              isOpen={confirmationModalIsOpen}
+              onRequestClose={() => setConfirmationModalIsOpen(false)}
+              onConfirm={handleConfirmVote}
+            />
+            <WinningNotificationModal
+              isOpen={winningNotificationIsOpen}
+              onRequestClose={closeWinningNotification}
+            />
           </>
         } />
       </Routes>

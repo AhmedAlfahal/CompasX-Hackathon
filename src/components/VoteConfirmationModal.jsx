@@ -1,14 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { motion } from 'framer-motion';
-import './PredictorModal.css';
+import './VoteConfirmationModal.css';
 
-const PredictorModal = ({ isOpen, onRequestClose, data }) => {
+const VoteConfirmationModal = ({ isOpen, onRequestClose, onConfirm }) => {
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
-      contentLabel="Predictor Modal"
+      contentLabel="Vote Confirmation"
       className="modal"
       overlayClassName="overlay"
     >
@@ -18,12 +18,13 @@ const PredictorModal = ({ isOpen, onRequestClose, data }) => {
         exit={{ y: 100, opacity: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <h2>Prediction Results</h2>
-        <p>{data}</p>
-        <button onClick={onRequestClose} className="cancel-button">Close</button>
+        <h2>Confirm Vote</h2>
+        <p>Are you sure you want to vote for this team?</p>
+        <button onClick={onConfirm} className="confirm-button">Confirm</button>
+        <button onClick={onRequestClose} className="cancel-button">Cancel</button>
       </motion.div>
     </Modal>
   );
 };
 
-export default PredictorModal;
+export default VoteConfirmationModal;
