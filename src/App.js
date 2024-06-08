@@ -1,4 +1,3 @@
-// App.js
 import React, { useState } from 'react';
 import Livestream from './Livestream';
 import CompetitionBar from './components/CompetitionBar';
@@ -18,17 +17,17 @@ function App() {
   };
 
   return (
-    <>
-      <div className="App">
-        <h1>Gaming Livestream</h1>
-        <Livestream />
+    <div className="App">
+      <h1>Gaming Livestream</h1>
+      <Livestream />
+      <div className="competition-bar-container">
         <CompetitionBar player1Score={votesTeamA} player2Score={votesTeamB} />
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '50px' }}>
-          <VotingButton color="#E91E63" onClick={() => handleVote('A')}>Team A</VotingButton>
-          <VotingButton color="#00BCD4" onClick={() => handleVote('B')}>Team B</VotingButton>
-        </div>
       </div>
-    </>
+      <div className="voting-buttons-container">
+        <VotingButton color="#E91E63" onClick={() => handleVote('A')}>Team A</VotingButton>
+        <VotingButton color="#00BCD4" onClick={() => handleVote('B')}>Team B</VotingButton>
+      </div>
+    </div>
   );
 }
 
