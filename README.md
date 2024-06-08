@@ -1,5 +1,5 @@
 <h2 align="center">
-   Decentralized Voting System
+   YALLA Vote
 </h2>
 
 <p align="center">🎮Empowering Every Voice with Blockchain Trust🎮</p>
@@ -9,7 +9,8 @@
 
 
 
-![Add a subheading](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/138756079/fc1288bc-1bae-431a-9c41-6fa8d955835b)
+![Capture](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/138756079/9394e603-52d7-4b6f-b199-bb9cc5159bb9)
+
 
 
 
