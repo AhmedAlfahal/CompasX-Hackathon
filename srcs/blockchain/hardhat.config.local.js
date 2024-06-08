@@ -1,7 +1,7 @@
 require("@nomiclabs/hardhat-ethers");
 const fs = require("fs");
 // Replace with the actual path to your contract JSON file
-const { abi, bytecode } = require("./contracts/artifacts/contracts/OpenDoc.sol/OpenDoc.json");
+const { abi, bytecode } = require("./contracts/artifacts/contracts/YallaVote.sol/YallaVote.json");
 
 task(
   "deploy",
