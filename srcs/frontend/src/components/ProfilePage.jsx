@@ -1,9 +1,34 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import { ethers } from 'ethers';
+
 import { motion } from 'framer-motion';
 import './ProfilePage.css';
+import Yalla from "../YallaVote.json"
+const YallaVote = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 
-const ProfilePage = ({ user }) => {
+
+async function mint(address){
+	if (!address) return;
+	try {
+		if (typeof window.ethereum !== "undefined"){
+			const provider = new ethers.BrowserProvider(window.ethereum);
+			const signer = await provider.getSigner();
+			console.log(signer)
+			const contract = new ethers.Contract(YallaVote, Yalla.abi, signer);
+			const transaction = await contract.mint(signer.address, "", {
+				value: ethers.parseEther("0")
+			  });
+			await transaction.wait();
+		}
+	}
+	catch (error) {
+		console.log(error.message)
+	  }
+}
+
+const ProfilePage = ({ user, account }) => {
+
   const [nftMinted, setNftMinted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isMintSuccess, setIsMintSuccess] = useState(false);
@@ -17,7 +42,7 @@ const ProfilePage = ({ user }) => {
   };
 
   const handleMintNft = () => {
-    // Logic to mint the NFT
+    mint(account)
     setIsModalOpen(false);
     setIsMintSuccess(true);
     setNftMinted(true);

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { ethers } from 'ethers';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import Livestream from './Livestream';
 import CompetitionBar from './components/CompetitionBar';
@@ -8,7 +9,14 @@ import Header from './components/Header';
 import ProfilePage from './components/ProfilePage';
 import './App.css';
 
+async function getAccount() {
+	const provider = new ethers.BrowserProvider(window.ethereum)
+	const signer = await provider.getSigner();
+	return (signer.address)
+}
+
 const App = () => {
+	const [account, setAccount] = useState("");
   const navigate = useNavigate();
   const [votesTeamA, setVotesTeamA] = useState(0);
   const [votesTeamB, setVotesTeamB] = useState(0);
@@ -51,11 +59,26 @@ const App = () => {
     setModalIsOpen(false);
   };
 
+  useEffect(() => {
+	setAccount(getAccount());
+	console.log(account);
+	const handleAccountsChanged = () => {
+		setAccount(getAccount());
+		console.log(account);
+	};
+
+	window.ethereum.on('accountsChanged', handleAccountsChanged);
+
+	return () => {
+	  window.ethereum.removeListener('accountsChanged', handleAccountsChanged);
+	};
+  }, []);
+
   return (
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/profile" element={<ProfilePage user={user} />} />
+        <Route path="/profile" element={<ProfilePage user={user} account={account}/>} />
         <Route path="/" element={
           <>
             <div className="content">
