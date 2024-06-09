@@ -1,22 +1,71 @@
-/* src/components/StreamOnlyPage.css */
 .stream-only-page {
     padding: 20px;
     background-color: #242424;
     color: white;
+    height: 100vh; /* Ensure the page takes the full viewport height */
   }
   
   .stream-and-chat {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    height: calc(100vh - 40px); /* Adjust height to take the full viewport minus padding */
+    margin-top: 20px;
+  }
+  
+  .stream-container, .chatbox-container {
+    background-color: #1a1a1a; /* Match background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Match shadow */
+    display: flex;
+    flex-direction: column;
   }
   
   .stream-container {
     flex: 3;
+    margin-right: 20px;
   }
   
   .chatbox-container {
     flex: 1;
-    margin-left: 20px;
-    /* Additional styling for chatbox */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chat-messages {
+    flex: 1; /* Take up remaining space */
+    overflow-y: auto;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .chat-input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto; /* Push to the bottom */
+  }
+  
+  .chat-input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    margin-top: 156px;
+    border-radius: 5px;
+    margin-right: 10px;
+    }
+    
+    .send-button {
+    margin-top: 156px;
+    background-color: #00BCD4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .send-button:hover {
+    background-color: #0097a7;
   }
   

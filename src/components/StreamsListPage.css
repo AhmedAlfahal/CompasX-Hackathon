@@ -1,0 +1,39 @@
+.streams-list-page {
+    padding: 20px;
+    background-color: #242424;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .streams-list-page h1 {
+    margin-bottom: 20px;
+    color: #00BCD4;
+  }
+  
+  .stream-item {
+    background-color: #1a1a1a;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+  }
+  
+  .watch-button {
+    background-color: #00BCD4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .watch-button:hover {
+    background-color: #0097a7;
+  }
+  

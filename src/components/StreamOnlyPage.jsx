@@ -1,6 +1,6 @@
-// src/components/StreamOnlyPage.jsx
 import React from 'react';
 import Livestream from '../Livestream';
+import Chatbox from './Chatbox';
 import './StreamOnlyPage.css';
 
 const StreamOnlyPage = () => {
@@ -12,7 +12,7 @@ const StreamOnlyPage = () => {
           <Livestream />
         </div>
         <div className="chatbox-container">
-          {/* Chatbox component here */}
+          <Chatbox />
         </div>
       </div>
     </div>

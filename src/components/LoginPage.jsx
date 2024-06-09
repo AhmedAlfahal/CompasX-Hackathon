@@ -2,6 +2,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
+import Youtube from '../assets/youtube.png';
+import Instagram from '../assets/instagram.png';
+import Twitch from '../assets/twitch.png';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -25,15 +28,16 @@ const LoginPage = () => {
       </header>
 
       <footer className="footer">
+        <div className="social-media">
+            <a>Follow Us:</a>
+        <a href="#"><img src={Twitch} alt="Twitch"/></a>
+          <a href="#"><img src={Youtube} alt="Youtube"/></a>
+          <a href="#"><img src={Instagram} alt="Instagram"/></a>
+        </div>
         <div className="footer-links">
           <a href="#">Terms of Service</a>
           <a href="#">Privacy Policy</a>
           <a href="#">Contact Us</a>
-        </div>
-        <div className="social-media">
-          <a href="#"><img src="facebook-icon.png" alt="Facebook" /></a>
-          <a href="#"><img src="twitter-icon.png" alt="Twitter" /></a>
-          <a href="#"><img src="instagram-icon.png" alt="Instagram" /></a>
         </div>
       </footer>
     </div>
