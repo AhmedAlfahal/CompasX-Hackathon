@@ -169,7 +169,7 @@ git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Ha
 
 **2. Use Makefile**
 ```bash
-  $ sudo make
+  $ make
 ```
 ![make](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/7900e3c8-90d8-404c-895b-a6ddd4aec8c6)
 
