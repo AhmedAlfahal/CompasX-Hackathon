@@ -165,9 +165,13 @@ Technologies that We used to develop Voting System:
 git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Hackathon
 ```
 
-# 2. Run Project
+# 2. Use Makefile
 ```bash
-  $ make
+  $ sudo make
+```
+# 3. Open a new tab in the web browser and connect to:
+```bash
+  localhost:3000
 ```
 
 ## Trade-off: Integrating User Profiles with NFTs
@@ -207,12 +211,6 @@ $ git commit -m 'feat: My new feature'
 
 # Send the code to your remote branch
 $ git push origin my-feature
-```
-## Misc
-   A DEMO can be tried from here: (https://localhost:3000)
-   But you have to be connected to **space42_admin** Network 
-   
----
 
 ### License
    This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
