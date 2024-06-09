@@ -200,22 +200,22 @@ $ gh repo fork AhmedAlfahal/CompasX-Hackathon
 **Follow the steps below**
 
 
-# Clone your fork
+**Clone your fork**
 ```bash
 $ git clone your-fork-url && cd CompasX-Hackathon
 ```
 
-# Create a branch with your feature
+**Create a branch with your feature**
 ```bash
 $ git checkout -b my-feature
 ```
 
-# Make the commit with your changes
+**Make the commit with your changes**
 ```bash
 $ git commit -m 'feat: My new feature
 ```
 
-# Send the code to your remote branch
+**Send the code to your remote branch**
 ```bash
 $ git push origin my-feature
 ```
