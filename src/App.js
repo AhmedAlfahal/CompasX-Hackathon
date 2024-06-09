@@ -8,6 +8,9 @@ import Header from './components/Header';
 import ProfilePage from './components/ProfilePage';
 import VoteConfirmationModal from './components/VoteConfirmationModal';
 import WinningNotificationModal from './components/WinningNotificationModal';
+import LoginPage from './components/LoginPage';
+import LoginForm from './components/LoginForm';
+import StreamOnlyPage from './components/StreamOnlyPage';
 import './App.css';
 
 const App = () => {
@@ -32,7 +35,7 @@ const App = () => {
     ],
     tags: ['Analyst', 'Strategist']
   });
-  
+
   const [team, setTeam] = useState(null);
   const modalRef = useRef(null);
 
@@ -51,14 +54,14 @@ const App = () => {
     setConfirmationModalIsOpen(false);
     setModalData(`Prediction for Team ${team}`);
     setModalIsOpen(true);
-  
+
     if (team === 'A') {
       setVotesTeamA(votesTeamA + 1);
     } else if (team === 'B') {
       setVotesTeamB(votesTeamB + 1);
     }
     setVoted(true);
-  
+
     // Update user stats and award tags
     const updatedUser = { ...user };
     updatedUser.successVotes += 1;
@@ -68,14 +71,13 @@ const App = () => {
       updatedUser.tags.push('Analyst');
     }
     setUser(updatedUser);
-  
+
     setTimeout(() => {
       setWinningNotificationIsOpen(true);
       updatedUser.nfts.push({ image: 'path/to/new-nft.png', name: 'New NFT' });
       setUser(updatedUser);
     }, 3000);
   };
-
 
   const closeModal = () => {
     setModalIsOpen(false);
@@ -88,57 +90,60 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header />
-      <h2>Live Stream</h2>
       <Routes>
-  <Route path="/profile" element={<ProfilePage user={user} />} />
-  <Route path="/" element={
-    <>
-      <div className="content">
-        <div className="video-chat-container">
-          <div className="video-container">
-            <Livestream />
-          </div>
-          <div className="chat-container">
-            <h2>Chat</h2>
-            <div className="chat-messages">
-              {/* Mock chat messages */}
-              <p>User1: Hello!</p>
-              <p>User2: Hi there!</p>
-              {/* Add more chat messages here */}
+        <Route path="/profile" element={<ProfilePage user={user} />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/streams" element={<StreamOnlyPage />} />
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/main" element={
+          <>
+            <Header />
+            <h2>Live Stream</h2>
+            <div className="content">
+              <div className="video-chat-container">
+                <div className="video-container">
+                  <Livestream />
+                </div>
+                <div className="chat-container">
+                  <h2>Chat</h2>
+                  <div className="chat-messages">
+                    {/* Mock chat messages */}
+                    <p>User1: Hello!</p>
+                    <p>User2: Hi there!</p>
+                    {/* Add more chat messages here */}
+                  </div>
+                  <div className="chat-input-container">
+                    <input type="text" placeholder="Type your message..." className="chat-input" />
+                    <button className="send-button">Send</button>
+                  </div>
+                </div>
+              </div>
+              <div className="competition-bar-container">
+                <h2 className="competition-bar-label">Result Prediction</h2>
+                <CompetitionBar player1Score={votesTeamA} player2Score={votesTeamB} />
+                <div className="voting-buttons-container">
+                  <VotingButton color="#E91E63" onClick={() => handleVoteClick('A')} disabled={voted}>
+                    Team A
+                  </VotingButton>
+                  <VotingButton color="#00BCD4" onClick={() => handleVoteClick('B')} disabled={voted}>
+                    Team B
+                  </VotingButton>
+                </div>
+              </div>
+              <PredictorModal ref={modalRef} isOpen={modalIsOpen} onRequestClose={closeModal} data={modalData} />
+              <VoteConfirmationModal
+                isOpen={confirmationModalIsOpen}
+                onRequestClose={() => setConfirmationModalIsOpen(false)}
+                onConfirm={handleConfirmVote}
+              />
+              <WinningNotificationModal
+                isOpen={winningNotificationIsOpen}
+                onRequestClose={closeWinningNotification}
+              />
             </div>
-            <div className="chat-input-container">
-              <input type="text" placeholder="Type your message..." className="chat-input" />
-              <button className="send-button">Send</button>
-            </div>
-          </div>
-        </div>
-        <div className="competition-bar-container">
-          <h2 className="competition-bar-label">Result Prediction</h2>
-          <CompetitionBar player1Score={votesTeamA} player2Score={votesTeamB} />
-          <div className="voting-buttons-container">
-            <VotingButton color="#E91E63" onClick={() => handleVoteClick('A')} disabled={voted}>
-              Team A
-            </VotingButton>
-            <VotingButton color="#00BCD4" onClick={() => handleVoteClick('B')} disabled={voted}>
-              Team B
-            </VotingButton>
-          </div>
-        </div>
-        <PredictorModal ref={modalRef} isOpen={modalIsOpen} onRequestClose={closeModal} data={modalData} />
-        <VoteConfirmationModal
-          isOpen={confirmationModalIsOpen}
-          onRequestClose={() => setConfirmationModalIsOpen(false)}
-          onConfirm={handleConfirmVote}
-        />
-        <WinningNotificationModal
-          isOpen={winningNotificationIsOpen}
-          onRequestClose={closeWinningNotification}
-        />
-      </div>
-    </>
-  } />
-</Routes>
+          </>
+        } />
+      </Routes>
     </div>
   );
 };

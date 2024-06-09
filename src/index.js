@@ -4,7 +4,6 @@ import Main from './Main';
 import './index.css';
 import Modal from 'react-modal';
 
-// Bind modal to app element
 Modal.setAppElement('#root');
 
 ReactDOM.render(

@@ -1,13 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 import './Header.css';
 import logo from '../assets/logo.png';
+import userImage from '../assets/userImage.jpg'; // Add the path to the user's image
 
 const Header = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const handleProfileClick = () => {
-    navigate('/profile'); // Navigate to profile page
+    navigate('/profile');
   };
 
   return (
@@ -19,6 +20,7 @@ const Header = () => {
       </div>
       <div className="header-right">
         <div className="profile-dropdown">
+          <img src={userImage} alt="User" className="user-image" />
           <button className="profile-button">Profile</button>
           <div className="dropdown-content">
             <a onClick={handleProfileClick}>Profile</a>

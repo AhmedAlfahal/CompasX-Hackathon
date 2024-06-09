@@ -1,0 +1,22 @@
+/* src/components/StreamOnlyPage.css */
+.stream-only-page {
+    padding: 20px;
+    background-color: #242424;
+    color: white;
+  }
+  
+  .stream-and-chat {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stream-container {
+    flex: 3;
+  }
+  
+  .chatbox-container {
+    flex: 1;
+    margin-left: 20px;
+    /* Additional styling for chatbox */
+  }
+  

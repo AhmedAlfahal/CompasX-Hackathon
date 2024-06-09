@@ -1,0 +1,53 @@
+/* src/components/LoginPage.css */
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #242424;
+    color: white;
+    text-align: center;
+  }
+  
+  .login-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .yalla-vote {
+    color: #61dafb; /* Same color as in the header */
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  .login-button {
+    background-color: #E91E63;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .login-button:hover {
+    background-color: #c2185b;
+  }
+  
+  .watch-streams-button {
+    background-color: #00BCD4;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .watch-streams-button:hover {
+    background-color: #0097a7;
+  }
+  
