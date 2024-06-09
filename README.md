@@ -181,7 +181,9 @@ git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Ha
 ![adding the network (1)](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/12ef6a56-fb73-4ac8-b532-1de9adb71366)
 
 **5. Setup the private key**
+![setup the private key](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/7e6662e1-5531-40f1-ab6d-19ee4b34c886)
 
+**6. Manage Extention**
 
 ## Trade-off: Integrating User Profiles with NFTs
 
