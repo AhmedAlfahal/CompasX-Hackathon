@@ -167,11 +167,13 @@ Technologies that We used to develop Voting System:
 git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Hackathon
 ```
 
-# 2. Use Makefile
+**2. Use Makefile**
 ```bash
   $ sudo make
 ```
-# 3. Open a new tab in the web browser and connect to:
+![make](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/7900e3c8-90d8-404c-895b-a6ddd4aec8c6)
+
+**3. Open a new tab in the web browser and connect to:**
 ```bash
   localhost:3000
 ```
