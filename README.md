@@ -1,4 +1,4 @@
-<h2 align="center">
+<h1 align="center">
    Decentralized Voting System      
 </h2>
    <h2 align="center">
@@ -156,6 +156,7 @@ Technologies that We used to develop Voting System:
 - **Solana Test Network**: Access to a test network like Red Hat for deploying smart contracts.
 - **Make**: Ensure you have Make installed to use Makefile files.
 - **Docker**: Ensure you have Docker install and all it's prerequests.
+- **Google Chrome Browser**: Ensure you have Google Chrome Browser installed.
 
 ### Installation
 
@@ -165,10 +166,25 @@ Technologies that We used to develop Voting System:
 git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Hackathon
 ```
 
-# 2. Run Project
+**2. Use Makefile**
 ```bash
   $ make
 ```
+![make](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/7900e3c8-90d8-404c-895b-a6ddd4aec8c6)
+
+**3. Install Meta Mask Extention**
+![install meta mask](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/b5032cc2-dfd5-4a87-8764-703f1f5a59c3)
+
+**4. Adding the netowrk to the Meta Mask**
+
+![adding the network (1)](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/12ef6a56-fb73-4ac8-b532-1de9adb71366)
+
+**5. Setup the private key**
+![setup the private key](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/7e6662e1-5531-40f1-ab6d-19ee4b34c886)
+
+**6. Manage Extention**
+
+![manage extenstion](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/fcdd7e97-cb67-4bcb-87db-2649cc8551f6)
 
 ## Trade-off: Integrating User Profiles with NFTs
 
@@ -195,24 +211,26 @@ $ gh repo fork AhmedAlfahal/CompasX-Hackathon
 
 **Follow the steps below**
 
+
+**Clone your fork**
 ```bash
-# Clone your fork
 $ git clone your-fork-url && cd CompasX-Hackathon
+```
 
-# Create a branch with your feature
+**Create a branch with your feature**
+```bash
 $ git checkout -b my-feature
+```
 
-# Make the commit with your changes
-$ git commit -m 'feat: My new feature'
+**Make the commit with your changes**
+```bash
+$ git commit -m 'feat: My new feature
+```
 
-# Send the code to your remote branch
+**Send the code to your remote branch**
+```bash
 $ git push origin my-feature
 ```
-## Misc
-   A DEMO can be tried from here: (https://localhost:3000)
-   But you have to be connected to **space42_admin** Network 
-   
----
 
 ### License
    This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
