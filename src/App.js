@@ -9,6 +9,8 @@ import ProfilePage from './components/ProfilePage';
 import VoteConfirmationModal from './components/VoteConfirmationModal';
 import WinningNotificationModal from './components/WinningNotificationModal';
 import LoginPage from './components/LoginPage';
+import VoterDetailsPage from './components/VotersDetails';
+import AdminPage from './components/AdminPage';
 import LoadingPage from './components/LoadingPage';
 import StreamOnlyPage from './components/StreamOnlyPage';
 import StreamsListPage from './components/StreamsListPage';
@@ -94,6 +96,8 @@ const App = () => {
         <Route path="/profile" element={<ProfilePage user={user} />} />
         <Route path="/loading" element={<LoadingPage />} />
         <Route path="/streams-list" element={<StreamsListPage />} />
+        <Route path="/admin" element={<AdminPage />} /> {/* Add admin route */}
+        <Route path="/voter-details" element={<VoterDetailsPage />} /> {/* Add voter details route */}
         <Route path="/streams" element={<StreamOnlyPage />} />
         <Route path="/" element={<LoginPage />} />
         <Route path="/main" element={

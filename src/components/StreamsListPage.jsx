@@ -21,10 +21,14 @@ const StreamsListPage = () => {
       <ul>
         {streams.map((stream) => (
           <li key={stream.id} className="stream-item">
-            <span>{stream.title}</span>
-            <button onClick={() => handleWatchStream(stream.id)} className="watch-button">
-              Watch Stream
-            </button>
+            <div className="stream-info">
+              <span>{stream.title}</span>
+            </div>
+            <div className="stream-button">
+              <button onClick={() => handleWatchStream(stream.id)} className="watch-button">
+                Watch Stream
+              </button>
+            </div>
           </li>
         ))}
       </ul>
