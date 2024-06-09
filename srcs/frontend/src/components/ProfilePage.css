@@ -172,3 +172,54 @@
 .social-share-buttons .confirm-button {
   width: auto;
 }
+
+.nft-img {
+	height: 150px !important;
+	width: 200px  !important;
+}
+
+.nft-display-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+	padding: 20px;
+}
+  
+  .nft-item {
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	overflow: hidden;
+	width: 300px;
+	background-color: #000000;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease-in-out;
+  }
+  
+  .nft-item:hover {
+	transform: translateY(-5px);
+  }
+  
+  .nft-item img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+  }
+  
+  .nft-item h3 {
+	font-size: 1.2em;
+	margin: 16px;
+	color: #ffffff;
+  }
+  
+  .nft-item p {
+	font-size: 0.9em;
+	color: #fff8f8;
+	margin: 0 16px 16px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+  }
+  

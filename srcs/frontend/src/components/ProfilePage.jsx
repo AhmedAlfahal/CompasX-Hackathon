@@ -154,7 +154,7 @@ const ProfilePage = ({ user }) => {
     <div key={nft.tokenId || index} className="nft-item">
       <h3>{nft.metaData?.name || 'NFT Name Not Found'}</h3>
       {nft.metaData?.image && (
-        <img src={nft.metaData.image} alt={nft.metaData?.name || 'NFT'} />
+        <img class="nft-img" src={nft.metaData.image} alt={nft.metaData?.name || 'NFT'} />
       )}
       <p>{nft.metaData?.description || 'No description available'}</p>
     </div>
