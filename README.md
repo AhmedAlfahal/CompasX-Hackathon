@@ -1,4 +1,4 @@
-<h2 align="center">
+![adding the network (1)](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/887acc62-4569-47dd-b50c-441e2039ccff)<h2 align="center">
    Decentralized Voting System      
 </h2>
    <h2 align="center">
@@ -176,7 +176,12 @@ git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Ha
 **3. Install Meta Mask Extention**
 ![install meta mask](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/b5032cc2-dfd5-4a87-8764-703f1f5a59c3)
 
-**3. Adding the netowrk to the Meta Mask**
+**4. Adding the netowrk to the Meta Mask**
+
+![adding the network (1)](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/12ef6a56-fb73-4ac8-b532-1de9adb71366)
+
+**5. Setup the private key**
+
 
 ## Trade-off: Integrating User Profiles with NFTs
 
