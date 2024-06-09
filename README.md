@@ -185,6 +185,8 @@ git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Ha
 
 **6. Manage Extention**
 
+![manage extenstion](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/fcdd7e97-cb67-4bcb-87db-2649cc8551f6)
+
 ## Trade-off: Integrating User Profiles with NFTs
 
 ### Enhanced User Engagement: 
