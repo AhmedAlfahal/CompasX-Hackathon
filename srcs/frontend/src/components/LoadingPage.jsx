@@ -1,24 +1,23 @@
-// src/components/LoadingScreen.jsx
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './LoadingScreen.css';
+import './LoadingPage.css';
 
-const LoadingScreen = () => {
+const LoadingPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate('/main');
-    }, 3000); // 3-second loading screen
+      navigate('/streams-list'); // Navigate to the streams list page after 3 seconds
+    }, 3000);
+
     return () => clearTimeout(timer);
   }, [navigate]);
 
   return (
-    <div className="loading-screen">
+    <div className="loading-page">
       <div className="spinner"></div>
-      <h2>Loading...</h2>
     </div>
   );
 };
 
-export default LoadingScreen;
+export default LoadingPage;

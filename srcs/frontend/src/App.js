@@ -9,8 +9,9 @@ import ProfilePage from './components/ProfilePage';
 import VoteConfirmationModal from './components/VoteConfirmationModal';
 import WinningNotificationModal from './components/WinningNotificationModal';
 import LoginPage from './components/LoginPage';
-import LoadingScreen from './components/LoadingScreen';
+import LoadingPage from './components/LoadingPage';
 import StreamOnlyPage from './components/StreamOnlyPage';
+import StreamsListPage from './components/StreamsListPage';
 import './App.css';
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
     failures: 3,
     winningStreak: 5,
     nfts: [
-     // need to be changed ****** { image: 'path/to/nft1.png', name: 'NFT 1' }
+      { image: 'path/to/nft1.png', name: 'NFT 1' }
     ],
     tags: ['Analyst', 'Strategist']
   });
@@ -91,9 +92,10 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="/profile" element={<ProfilePage user={user} />} />
-        <Route path="/loading" element={<LoadingScreen />} />
+        <Route path="/loading" element={<LoadingPage user={user}/>} />
+        <Route path="/streams-list" element={<StreamsListPage />} />
         <Route path="/streams" element={<StreamOnlyPage />} />
-        <Route path="/" element={<LoginPage user={user} />} />
+        <Route path="/" element={<LoginPage />} />
         <Route path="/main" element={
           <>
             <Header />
