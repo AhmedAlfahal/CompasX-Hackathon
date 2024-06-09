@@ -1,16 +1,26 @@
 // src/components/LoginPage.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './LoginPage.css';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/loading');
+  };
+
   return (
     <div className="login-page">
       <header className="hero-section">
         <h1>Welcome to Compass Voting</h1>
         <div className="cta-buttons">
-          <Link to="/login" className="btn-primary">Login With MetaMask</Link>
-          <Link to="/streams" className="btn-secondary">Watch Streams</Link>
+          <button className="btn-primary" onClick={handleLoginClick}>
+            Login With MetaMask
+          </button>
+          <Link to="/streams" className="btn-secondary">
+            Watch Streams
+          </Link>
         </div>
       </header>
 

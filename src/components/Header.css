@@ -1,10 +1,13 @@
+/* Header.css */
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #141414;
   padding: 10px 20px;
-  width: 100%; /* Ensure header takes full width */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .header-left {
@@ -32,8 +35,6 @@
 
 .header-right {
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 .profile-button {
@@ -43,7 +44,6 @@
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
-  margin-left: 10px; /* Add some space between the image and the button */
 }
 
 .dropdown-content {
@@ -71,9 +71,29 @@
   display: block;
 }
 
-.user-image {
-  width: 40px; /* Adjust the size as needed */
-  height: 40px; /* Adjust the size as needed */
+.profile-image {
   border-radius: 50%;
-  object-fit: cover; /* Ensure the image fits within the circle */
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .header-left h1 {
+    font-size: 20px;
+  }
+  
+  .header-left h2 {
+    font-size: 12px;
+  }
+  
+  .profile-button {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+  
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

@@ -1,16 +1,13 @@
+/* ProfilePage.css */
 .profile-page {
   padding: 20px;
   color: white;
   background-color: #242424;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  max-width: 1200px;
-  margin: auto;
+  text-align: center;
 }
 
 .profile-header {
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .profile-header h1 {
@@ -22,29 +19,28 @@
 }
 
 .tags {
-  margin-top: 20px;
-  text-align: center;
+  margin: 20px 0;
 }
 
 .tags-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: center;
 }
 
 .tag {
-  background-color: #00BCD4;
-  border-radius: 5px;
+  background-color: #1a1a1a;
   padding: 5px 10px;
-  color: white;
-  font-weight: bold;
+  border-radius: 5px;
+  color: #E91E63; /* Use pink color for tags */
 }
 
 .profile-content {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .nft-collection {
@@ -57,15 +53,17 @@
 }
 
 .nft-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .nft-card {
   background-color: #1a1a1a;
   border-radius: 10px;
   padding: 20px;
+  width: 200px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -96,8 +94,9 @@
 
 .profile-stats {
   flex: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -105,6 +104,7 @@
   background-color: #1a1a1a;
   border-radius: 10px;
   padding: 20px;
+  width: 200px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -165,6 +165,10 @@
 
 .social-share-buttons {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   gap: 10px;
+}
+
+.social-share-buttons .confirm-button {
+  width: auto;
 }

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { motion } from 'framer-motion';
+import Header from './Header';
 import './ProfilePage.css';
 import nft1 from '../assets/0.jpg';
 
@@ -14,10 +15,8 @@ const ProfilePage = ({ user }) => {
     let timer;
     if (isMintSuccess) {
       timer = setTimeout(() => {
-        if (1) {
-          setIsTagModalOpen(true);
-          user.tags.push('Analyst'); // Add the new tag to user
-        }
+        setIsTagModalOpen(true);
+        user.tags.push('Analyst'); // Add the new tag to user
       }, 5000); // Show the modal after 5 seconds
     }
     return () => clearTimeout(timer); // Cleanup the timer
@@ -60,6 +59,7 @@ const ProfilePage = ({ user }) => {
 
   return (
     <div className="profile-page">
+      <Header />
       <div className="profile-header">
         <h1>{user.name}'s Profile</h1>
         <p>Wallet Address: {user.walletAddress}</p>

@@ -9,7 +9,7 @@ import ProfilePage from './components/ProfilePage';
 import VoteConfirmationModal from './components/VoteConfirmationModal';
 import WinningNotificationModal from './components/WinningNotificationModal';
 import LoginPage from './components/LoginPage';
-import LoginForm from './components/LoginForm';
+import LoadingScreen from './components/LoadingScreen';
 import StreamOnlyPage from './components/StreamOnlyPage';
 import './App.css';
 
@@ -30,8 +30,7 @@ const App = () => {
     failures: 3,
     winningStreak: 5,
     nfts: [
-      { image: 'path/to/nft1.png', name: 'NFT 1' },
-      { image: 'path/to/nft2.png', name: 'NFT 2' }
+      { image: 'path/to/nft1.png', name: 'NFT 1' }
     ],
     tags: ['Analyst', 'Strategist']
   });
@@ -92,7 +91,7 @@ const App = () => {
     <div className="App">
       <Routes>
         <Route path="/profile" element={<ProfilePage user={user} />} />
-        <Route path="/login" element={<LoginForm />} />
+        <Route path="/loading" element={<LoadingScreen />} />
         <Route path="/streams" element={<StreamOnlyPage />} />
         <Route path="/" element={<LoginPage />} />
         <Route path="/main" element={

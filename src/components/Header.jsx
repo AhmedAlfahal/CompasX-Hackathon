@@ -20,7 +20,7 @@ const Header = () => {
       </div>
       <div className="header-right">
         <div className="profile-dropdown">
-          <img src={userImage} alt="User" className="user-image" />
+          <img src={userImage} alt="User" className="profile-image" />
           <button className="profile-button">Profile</button>
           <div className="dropdown-content">
             <a onClick={handleProfileClick}>Profile</a>
