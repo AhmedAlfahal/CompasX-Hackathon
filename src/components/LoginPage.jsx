@@ -1,26 +1,30 @@
-// src/components/LoginPage.jsx
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './LoginPage.css';
 
 const LoginPage = () => {
-  const navigate = useNavigate();
-
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
-
-  const handleWatchStreamsClick = () => {
-    navigate('/streams');
-  };
-
   return (
-    <div className="login-page">
-      <h1>Welcome to Compass Voting by Yalla Vote</h1>
-      <div className="button-container">
-        <button className="login-button" onClick={handleLoginClick}>Login</button>
-        <button className="watch-streams-button" onClick={handleWatchStreamsClick}>Watch Streams</button>
-      </div>
+    <div className="landing-page">
+      <header className="hero-section">
+        <h1>Welcome to Compass Voting</h1>
+        <div className="cta-buttons">
+          <Link to="/login" className="btn-primary">Login</Link>
+          <Link to="/streams" className="btn-secondary">Watch Streams</Link>
+        </div>
+      </header>
+      
+      <footer className="footer">
+        <div className="footer-links">
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div className="social-media">
+          <a href="#"><img src="facebook-icon.png" alt="Facebook"/></a>
+          <a href="#"><img src="twitter-icon.png" alt="Twitter"/></a>
+          <a href="#"><img src="instagram-icon.png" alt="Instagram"/></a>
+        </div>
+      </footer>
     </div>
   );
 };

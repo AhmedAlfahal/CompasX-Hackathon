@@ -9,7 +9,7 @@ const LandingPage = () => {
         <h1>Welcome to Compass Voting</h1>
         <div className="cta-buttons">
           <Link to="/login" className="btn-primary">Login</Link>
-          <Link to="/live-stream" className="btn-secondary">Watch Streams</Link>
+          <Link to="/streams" className="btn-secondary">Watch Streams</Link>
         </div>
       </header>
       
