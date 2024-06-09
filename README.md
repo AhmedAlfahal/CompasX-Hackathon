@@ -173,10 +173,10 @@ git clone https://github.com/AhmedAlfahal/CompasX-Hackathon.git && cd CompasX-Ha
 ```
 ![make](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/7900e3c8-90d8-404c-895b-a6ddd4aec8c6)
 
-**3. Open a new tab in the web browser and connect to:**
-```bash
-  localhost:3000
-```
+**3. Install Meta Mask Extention**
+![install meta mask](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/b5032cc2-dfd5-4a87-8764-703f1f5a59c3)
+
+**3. Adding the netowrk to the Meta Mask**
 
 ## Trade-off: Integrating User Profiles with NFTs
 
