@@ -1,4 +1,4 @@
-![adding the network (1)](https://github.com/AhmedAlfahal/CompasX-Hackathon/assets/122282675/887acc62-4569-47dd-b50c-441e2039ccff)<h2 align="center">
+<h1 align="center">
    Decentralized Voting System      
 </h2>
    <h2 align="center">
