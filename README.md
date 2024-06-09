@@ -150,7 +150,6 @@ Technologies that We used to develop Voting System:
 
 ### Prerequisites
 
-- **Kali Linux OS**: Ensure you have Kali Linux OS installed.
 - **Node.js** and **npm**: Ensure you have Node.js and npm installed.
 - **React.js**: Ensure you have React.js installed and all it's prerequests.
 - **Metamask**: Install the Metamask extension for your browser.
