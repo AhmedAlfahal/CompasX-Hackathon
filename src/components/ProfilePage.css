@@ -2,11 +2,15 @@
   padding: 20px;
   color: white;
   background-color: #242424;
-  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 1200px;
+  margin: auto;
 }
 
 .profile-header {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .profile-header h1 {
@@ -17,9 +21,30 @@
   color: #00BCD4; /* Use cyan color for wallet address */
 }
 
+.tags {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.tag {
+  background-color: #00BCD4;
+  border-radius: 5px;
+  padding: 5px 10px;
+  color: white;
+  font-weight: bold;
+}
+
 .profile-content {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .nft-collection {
@@ -32,17 +57,15 @@
 }
 
 .nft-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  justify-content: center;
 }
 
 .nft-card {
   background-color: #1a1a1a;
   border-radius: 10px;
   padding: 20px;
-  width: 200px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -73,18 +96,15 @@
 
 .profile-stats {
   flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 20px;
-  margin-top: 20px;
 }
 
 .stat-card {
   background-color: #1a1a1a;
   border-radius: 10px;
   padding: 20px;
-  width: 200px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -141,4 +161,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #00BCD4; /* Use cyan color for success text */
   font-size: 18px;
+}
+
+.social-share-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
