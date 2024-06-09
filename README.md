@@ -199,18 +199,26 @@ $ gh repo fork AhmedAlfahal/CompasX-Hackathon
 
 **Follow the steps below**
 
-```bash
+
 # Clone your fork
+```bash
 $ git clone your-fork-url && cd CompasX-Hackathon
+```
 
 # Create a branch with your feature
+```bash
 $ git checkout -b my-feature
+```
 
 # Make the commit with your changes
-$ git commit -m 'feat: My new feature'
+```bash
+$ git commit -m 'feat: My new feature
+```
 
 # Send the code to your remote branch
+```bash
 $ git push origin my-feature
+```
 
 ### License
    This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
