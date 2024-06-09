@@ -1,4 +1,7 @@
-npm install
+#!/bin/bash
+
 npm install styled-components
-npm install react-router-dom@6
+sleep 10
+npm install react-router-dom@6s
+sleep 10
 npm start

@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
+RUN npm install
+RUN install dos2unix
+RUN dos2unix entrypoint.sh
 # Clean npm cache and install dependencies
 
 # Copy the rest of the application code
